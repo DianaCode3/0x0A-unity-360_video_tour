@@ -761,6 +761,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeRoom
       objectReference: {fileID: 0}
+    - target: {fileID: 1000013165000468, guid: c43602d5712fe4fd4bf33173bb6b8e26, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4000014274899290, guid: c43602d5712fe4fd4bf33173bb6b8e26, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
