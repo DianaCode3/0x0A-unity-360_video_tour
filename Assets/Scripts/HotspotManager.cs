@@ -3,8 +3,8 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
  
 [RequireComponent(typeof(Image))]
-public class HotspotManager : MonoBehaviour, IPointerClickHandler {
- 
+public class HotspotManager : MonoBehaviour, IPointerClickHandler
+{
     private Image _image;
     private FadeOut _fadeOut;
     public GameObject currentVideo;
