@@ -3,31 +3,22 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
  
 [RequireComponent(typeof(Image))]
-public class HotspotManager : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler {
+public class HotspotManager : MonoBehaviour, IPointerClickHandler {
  
     private Image _image;
+    private FadeOut _fadeOut;
     public GameObject currentVideo;
     public GameObject nextVideo;
- 
-    void Start() => _image = GetComponent<Image> ();
+
+    void Start()
+    {
+        _image = GetComponent<Image>();
+        _fadeOut = FindObjectOfType<FadeOut>();
+    }
     
-    public void OnPointerEnter(PointerEventData eventData) 
+    public void OnPointerClick(PointerEventData eventData)
     {
         _image.color = Color.gray;
-        Debug.Log("perfecto");
-    }
- 
-    public void OnPointerExit(PointerEventData eventData) 
-    {
-        _image.color = Color.white;
-    }
- 
-    public void OnPointerClick(PointerEventData eventData) 
-    {
-    
-        _image.color = Color.blue;
-        currentVideo.SetActive(false);
-        nextVideo.SetActive(true);
-        
+        _fadeOut.FadeStart(currentVideo, nextVideo);
     }
 }

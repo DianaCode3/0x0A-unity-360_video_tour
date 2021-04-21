@@ -9,6 +9,7 @@ public class VREyeRaycaster : MonoBehaviour
 
     private void Start() => _camera = Camera.main;
     
+    
     public void Update()
     {
         var pointer = new PointerEventData(EventSystem.current);
@@ -16,8 +17,8 @@ public class VREyeRaycaster : MonoBehaviour
         pointer.position = _camera.WorldToScreenPoint(transform.forward);
         var raycastResults = new List<RaycastResult>();
         EventSystem.current.RaycastAll(pointer, raycastResults);
-        
-        if (raycastResults.Count > 0) 
+
+    if (raycastResults.Count > 0) 
         {
             //GameObject detected in front of the camera.
             Debug.Log($"Gazed Object: {raycastResults[0].gameObject.name}");
