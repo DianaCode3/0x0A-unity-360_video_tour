@@ -13,7 +13,7 @@ public class FadeOut : MonoBehaviour
         _currentVideo = currentVideo;
         _nextVideo = nextVideo;
 
-        LeanTween.value(imageObject, 0, 1, 2f).setOnUpdate((float val) =>
+        LeanTween.value(imageObject, 0, 1, 1f).setOnUpdate((float val) =>
         {
             Color c = image.color;
             c.a = val;
@@ -26,7 +26,7 @@ public class FadeOut : MonoBehaviour
         _currentVideo.SetActive(false);
         _nextVideo.SetActive(true);
         
-        LeanTween.value(imageObject, 1, 0, 2f).setOnUpdate((float val) =>
+        LeanTween.value(imageObject, 1, 0, 1f).setOnUpdate((float val) =>
         {
             Color c = image.color;
             c.a = val;
